@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Pyqt filebrowser : A standard file browser that lets you browse your computer and select files or directories." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Pyqt filebrowser</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/xd009642/PyQt_FileBrowser">View on GitHub</a>
+
+          <h1 id="project_title">Pyqt filebrowser</h1>
+          <h2 id="project_tagline">A standard file browser that lets you browse your computer and select files or directories.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/xd009642/PyQt_FileBrowser/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/xd009642/PyQt_FileBrowser/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="summary" class="anchor" href="#summary"><span class="octicon octicon-link"></span></a>Summary</h1>
+
+<p>This is a file browser designed to be included in projects and very simplistic to use. Built using PyQt all users have to do is create a FileBrowser object specify some settings (can directories be selected? What file extensions are allowed) and then call the show method inherited from QDialog </p>
+
+<h1>
+<a name="planned-features" class="anchor" href="#planned-features"><span class="octicon octicon-link"></span></a>Planned Features</h1>
+
+<ul>
+<li>The ability to select multiple files through shift-click or ctrl-click (and other OS specifics)</li>
+<li>Improvements to the User interface - back button as well as up, aesthetic changes, ability to see directory tree</li>
+<li>Drop down menu allowing users to filter files similar to windows</li>
+<li>Possibly icons (although this is a trickier area)</li>
+<li>Keyboard control</li>
+</ul><h1>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic Usage</h1>
+
+<p>In another Qt window:</p>
+
+<pre><code>def __init__(self, parent=None):
+    QtGui.QWidget.__init__(self, parent)
+    '''setup code'''
+    QtCore.QObject.connect(self.ui.browseButton, QtCore.SIGNAL('clicked()'), self.openFileBrowser)
+
+def openFileBrowser(self):
+    self.fileBrowser=Browser()
+    self.fileBrowser.setAllowedExtensions(('py', 'txt', 'xml'))
+    self.fileBrowser.exec_()
+    '''To access the selected path:'''
+    self.fileBrowser.path
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Pyqt filebrowser maintained by <a href="https://github.com/xd009642">xd009642</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
